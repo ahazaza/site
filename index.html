@@ -129,12 +129,16 @@
     .mobile-nav-link { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--ahz-muted); padding: var(--sp-4) 0; border-bottom: 1px solid rgba(37,58,89,0.5); cursor: pointer; transition: color 160ms; }
     .mobile-nav-link:hover { color: var(--ahz-text); }
     .mobile-menu-close { position: absolute; top: var(--sp-6); right: var(--sp-6); background: none; border: none; cursor: pointer; color: var(--ahz-muted); font-size: 28px; line-height: 1; min-width:44px; min-height:44px; }
-    .mobile-cta { margin-top: auto; padding-top: var(--sp-8); }
+    .mobile-cta { margin-top: auto; padding-top: var(--sp-8); display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; gap: var(--sp-2); border-radius: 999px; font-weight: 600; cursor: pointer; border: none; outline: none; transition: all 160ms ease; white-space: nowrap; }
     .btn-primary { background: var(--grad-button); color: var(--ahz-paper-text); height: 48px; padding: 0 var(--sp-6); font-size: 15px; box-shadow: 0 0 0 0 rgba(104,216,255,0); }
     .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 28px rgba(104,216,255,0.35), 0 4px 16px rgba(47,128,255,0.3); }
     .btn-secondary { background: transparent; border: 1px solid rgba(168,183,204,0.18); color: var(--ahz-text); height: 48px; padding: 0 var(--sp-6); font-size: 15px; }
     .btn-secondary:hover { border-color: var(--ahz-sky); color: var(--ahz-sky); }
+    .header-link-ijwi { border-color: rgba(246,200,95,0.38); color: var(--ahz-gold); background: rgba(246,200,95,0.07); }
+    .header-link-ijwi:hover, .header-link-ijwi:focus-visible { border-color: var(--ahz-gold); color: var(--ahz-paper-text); background: var(--ahz-gold); box-shadow: 0 0 22px rgba(246,200,95,0.18); }
+    .header-link-wahageze { border-color: rgba(52,211,153,0.38); color: var(--ahz-green); background: rgba(52,211,153,0.07); }
+    .header-link-wahageze:hover, .header-link-wahageze:focus-visible { border-color: var(--ahz-green); color: var(--ahz-paper-text); background: var(--ahz-green); box-shadow: 0 0 22px rgba(52,211,153,0.18); }
     .btn-sm { height: 40px; padding: 0 var(--sp-5); font-size: 13px; }
     .badge { display: inline-flex; align-items: center; gap: var(--sp-2); font-family: var(--font-mono); font-size: 11px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 999px; padding: var(--sp-2) var(--sp-4); border: 1px solid; white-space: nowrap; }
     .badge-blue { background: rgba(47,128,255,0.12); border-color: rgba(47,128,255,0.3); color: var(--ahz-sky); }
@@ -332,7 +336,7 @@
         <a class="nav-link" href="#principles">Principles</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
-      <div class="header-cta"><a class="btn btn-secondary btn-sm" href="mailto:contact@ahazaza.rw">contact@ahazaza.rw</a></div>
+      <div class="header-cta"><a class="btn btn-secondary btn-sm header-link-ijwi" href="https://ijwi.rw" target="_blank" rel="noopener noreferrer">ijwi.rw</a><a class="btn btn-secondary btn-sm header-link-wahageze" href="https://wahageze.com" target="_blank" rel="noopener noreferrer">wahageze.com</a></div>
       <button class="btn-hamburger" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
@@ -345,7 +349,7 @@
     <a class="mobile-nav-link" href="#roadmap">Roadmap</a>
     <a class="mobile-nav-link" href="#principles">Principles</a>
     <a class="mobile-nav-link" href="#contact">Contact</a>
-    <div class="mobile-cta"><a class="btn btn-primary" href="#contact">Contact AHAZAZA</a></div>
+    <div class="mobile-cta"><a class="btn btn-secondary header-link-ijwi" href="https://ijwi.rw" target="_blank" rel="noopener noreferrer">ijwi.rw</a><a class="btn btn-secondary header-link-wahageze" href="https://wahageze.com" target="_blank" rel="noopener noreferrer">wahageze.com</a></div>
   </div>
 
   <main id="main" class="manifesto-page">
