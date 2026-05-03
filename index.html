@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AHAZAZA TECHNOLOGIES LTD — AI-Native Infrastructure for Rwanda’s Commerce Value Chains</title>
+  <meta name="description" content="AHAZAZA TECHNOLOGIES LTD is building AI-native infrastructure for Rwanda’s commerce value chains — starting with Wahageze agribusiness value chains and expanding through Ijwi, Wahageze, Hafi, Heza, and AHAZAZA Core." />
+  <meta name="keywords" content="AHAZAZA, Rwanda commerce value chains, Rwanda value chain, Rwanda AI, Kinyarwanda AI, Rwanda agribusiness, Rwanda logistics, Made in Rwanda, AI infrastructure Rwanda, Wahageze, Ijwi, Hafi, Heza" />
+  <meta name="author" content="AHAZAZA TECHNOLOGIES LTD" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#07111F" />
+  <link rel="canonical" href="https://ahazaza.rw" />
+  <meta property="og:title" content="AHAZAZA TECHNOLOGIES LTD — AI-Native Infrastructure for Rwanda’s Commerce Value Chains" />
+  <meta property="og:description" content="AHAZAZA is building the operating system for Rwanda’s commerce value chains: Kinyarwanda-native AI, demand intelligence, procurement, logistics, supplier quality, finance-readiness, and trusted data infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ahazaza.rw" />
+  <meta property="og:image" content="https://ahazaza.rw/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AHAZAZA TECHNOLOGIES LTD — AI-Native Infrastructure for Rwanda’s Commerce Value Chains" />
+  <meta name="twitter:description" content="AI-native infrastructure for Rwanda’s commerce value chains." />
+  <meta name="twitter:image" content="https://ahazaza.rw/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307111F'/%3E%3Cpath d='M16 4.2 7.3 22.6 16 25.9 24.7 22.6Z' fill='white'/%3E%3Cpath d='M16 4.2 7.3 22.6 16 25.9 24.7 22.6Z' fill='none' stroke='%2307111F' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 4.2V25.9' fill='none' stroke='%2307111F' stroke-width='2.25' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --ahz-ink:        #07111F;
+      --ahz-deep:       #0B1628;
+      --ahz-panel:      #101E33;
+      --ahz-panel-soft: #15263F;
+      --ahz-line:       #253A59;
+      --ahz-text:       #F4F8FF;
+      --ahz-muted:      #A8B7CC;
+      --ahz-faint:      #6F819A;
+      --ahz-blue:       #2F80FF;
+      --ahz-sky:        #68D8FF;
+      --ahz-green:      #34D399;
+      --ahz-gold:       #F6C85F;
+      --ahz-red-soft:   #FF7A7A;
+      --ahz-success:    #4ADE80;
+      --ahz-paper:      #F7FAFF;
+      --ahz-paper-text: #0A1424;
+      --ahz-paper-muted:#53657D;
+      /* Exact Ijwi reference aliases kept to preserve the attached file's visual system. */
+      --ijwi-ink: var(--ahz-ink);
+      --ijwi-deep: var(--ahz-deep);
+      --ijwi-panel: var(--ahz-panel);
+      --ijwi-panel-soft: var(--ahz-panel-soft);
+      --ijwi-line: var(--ahz-line);
+      --ijwi-text: var(--ahz-text);
+      --ijwi-muted: var(--ahz-muted);
+      --ijwi-faint: var(--ahz-faint);
+      --ijwi-blue: var(--ahz-blue);
+      --ijwi-sky: var(--ahz-sky);
+      --ijwi-green: var(--ahz-green);
+      --ijwi-gold: var(--ahz-gold);
+      --ijwi-red-soft: var(--ahz-red-soft);
+      --ijwi-success: var(--ahz-success);
+      --ijwi-paper: var(--ahz-paper);
+      --ijwi-paper-text: var(--ahz-paper-text);
+      --font-sans:    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Sora", "Inter", sans-serif;
+      --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+      --container-max:    1180px;
+      --container-narrow: 820px;
+      --container-wide:   1360px;
+      --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px; --sp-32: 128px;
+      --grad-hero-glow: linear-gradient(135deg, #68D8FF 0%, #2F80FF 42%, #34D399 72%, #F6C85F 100%);
+      --grad-button: linear-gradient(135deg, #68D8FF 0%, #2F80FF 55%, #34D399 100%);
+      --grad-card: linear-gradient(180deg, rgba(21,38,63,0.86), rgba(11,22,40,0.78));
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; background: var(--ahz-ink); color-scheme: dark; }
+    body {
+      font-family: var(--font-sans);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(47,128,255,0.26), transparent 32%),
+        radial-gradient(circle at 80% 20%, rgba(52,211,153,0.16), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(246,200,95,0.10), transparent 35%),
+        #07111F;
+      background-attachment: fixed;
+      color: var(--ahz-text);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button { color: inherit; cursor: pointer; }
+    ul { list-style: none; }
+    :focus-visible { outline: 2px solid var(--ahz-sky); outline-offset: 4px; border-radius: 10px; }
+    ::selection { background: rgba(104,216,255,0.28); color: white; }
+    .page-bg {
+      position: fixed; inset: 0; z-index: -1;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(47,128,255,0.26), transparent 32%),
+        radial-gradient(circle at 80% 20%, rgba(52,211,153,0.16), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(246,200,95,0.10), transparent 35%),
+        #07111F;
+    }
+    .page-bg::after {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.5;
+    }
+    .scroll-progress { position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 2px; z-index: 3; pointer-events: none; transform: translate3d(0, 0, 0) scaleX(var(--scroll-progress-scale, 0)); transform-origin: left top; will-change: transform; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: linear-gradient(90deg, var(--ahz-sky), var(--ahz-green), var(--ahz-gold)); }
+    .skip-link { position: fixed; top: 12px; left: 12px; z-index: 1400; transform: translateY(-150%); padding: 10px 14px; border: 1px solid rgba(104,216,255,0.45); border-radius: 999px; background: rgba(7,17,31,0.92); color: var(--ahz-text); font-family: var(--font-mono); font-size: 12px; transition: transform 180ms ease; }
+    .skip-link:focus { transform: translateY(0); }
+    .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--sp-6); }
+    .container--narrow { max-width: var(--container-narrow); }
+    .container--wide { max-width: var(--container-wide); }
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 72px; overflow: visible; transition: background 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease; border-bottom: 1px solid transparent; }
+    #site-header.scrolled, #site-header.menu-open { background: rgba(7,17,31,0.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom-color: rgba(168,183,204,0.12); }
+    .header-inner { max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--sp-8); height: 100%; display: flex; align-items: center; gap: var(--sp-8); }
+    .logo-wrap { display: flex; align-items: center; gap: 12px; flex-shrink: 0; cursor: pointer; min-height: 44px; }
+    .logo-icon { width: 42px; height: 50px; flex-shrink: 0; display: block; color: var(--ahz-text); overflow: visible; transform: translateY(0); }
+    .logo-text { font-family: var(--font-display); font-size: 22px; line-height: 1; font-weight: 700; color: var(--ahz-text); letter-spacing: -0.02em; transition: opacity 160ms; }
+    .logo-wrap:hover .logo-text { opacity: 0.85; }
+    .site-nav { display: flex; align-items: center; gap: var(--sp-1); flex: 1; justify-content: center; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--ahz-muted); padding: var(--sp-2) var(--sp-4); border-radius: 8px; transition: color 160ms, background 160ms; cursor: pointer; }
+    .nav-link:hover, .nav-link.active { color: var(--ahz-text); background: rgba(168,183,204,0.08); }
+    .header-cta { display: flex; align-items: center; gap: var(--sp-4); flex-shrink: 0; }
+    .btn-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--ahz-text); padding: var(--sp-2); min-width:44px; min-height:44px; align-items:center; justify-content:center; }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(7,17,31,0.97); backdrop-filter: blur(20px); flex-direction: column; padding: 88px var(--sp-6) var(--sp-8); }
+    .mobile-menu.open { display: flex; }
+    .mobile-nav-link { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--ahz-muted); padding: var(--sp-4) 0; border-bottom: 1px solid rgba(37,58,89,0.5); cursor: pointer; transition: color 160ms; }
+    .mobile-nav-link:hover { color: var(--ahz-text); }
+    .mobile-menu-close { position: absolute; top: var(--sp-6); right: var(--sp-6); background: none; border: none; cursor: pointer; color: var(--ahz-muted); font-size: 28px; line-height: 1; min-width:44px; min-height:44px; }
+    .mobile-cta { margin-top: auto; padding-top: var(--sp-8); }
+    .btn { display: inline-flex; align-items: center; gap: var(--sp-2); border-radius: 999px; font-weight: 600; cursor: pointer; border: none; outline: none; transition: all 160ms ease; white-space: nowrap; }
+    .btn-primary { background: var(--grad-button); color: var(--ahz-paper-text); height: 48px; padding: 0 var(--sp-6); font-size: 15px; box-shadow: 0 0 0 0 rgba(104,216,255,0); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 28px rgba(104,216,255,0.35), 0 4px 16px rgba(47,128,255,0.3); }
+    .btn-secondary { background: transparent; border: 1px solid rgba(168,183,204,0.18); color: var(--ahz-text); height: 48px; padding: 0 var(--sp-6); font-size: 15px; }
+    .btn-secondary:hover { border-color: var(--ahz-sky); color: var(--ahz-sky); }
+    .btn-sm { height: 40px; padding: 0 var(--sp-5); font-size: 13px; }
+    .badge { display: inline-flex; align-items: center; gap: var(--sp-2); font-family: var(--font-mono); font-size: 11px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 999px; padding: var(--sp-2) var(--sp-4); border: 1px solid; white-space: nowrap; }
+    .badge-blue { background: rgba(47,128,255,0.12); border-color: rgba(47,128,255,0.3); color: var(--ahz-sky); }
+    .badge-green { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.3); color: var(--ahz-green); }
+    .badge-gold { background: rgba(246,200,95,0.12); border-color: rgba(246,200,95,0.3); color: var(--ahz-gold); }
+    .badge-muted { background: rgba(168,183,204,0.08); border-color: rgba(168,183,204,0.18); color: var(--ahz-muted); }
+    .badge-red { background: rgba(255,122,122,0.12); border-color: rgba(255,122,122,0.3); color: var(--ahz-red-soft); }
+    .badge-dot::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: block; }
+    .section-label { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-5); }
+    .section-label-line { width: 32px; height: 2px; background: var(--grad-button); border-radius: 1px; }
+    .section-label span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ahz-sky); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease, transform 600ms ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 100ms; } .reveal-delay-2 { transition-delay: 200ms; } .reveal-delay-3 { transition-delay: 300ms; }
+    .manifesto-page { padding-top: 112px; }
+    .manifesto-header { text-align: center; padding: 80px 0 72px; }
+    .manifesto-header h1 { font-family: var(--font-display); font-size: clamp(42px, 6.1vw, 64px); line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; max-width: 860px; margin: 0 auto var(--sp-6); text-wrap: balance; }
+    .manifesto-header .accent { background: var(--grad-hero-glow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .manifesto-header p { font-size: 18px; color: var(--ahz-muted); max-width: 760px; margin: 0 auto; line-height: 1.75; }
+    .hero-badge-row { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); margin-bottom: var(--sp-6); }
+    .proof-strip { max-width: 820px; margin: var(--sp-10) auto 0; border-top: 1px solid rgba(168,183,204,0.14); border-bottom: 1px solid rgba(168,183,204,0.14); text-align: left; }
+    .proof-strip li { display: grid; grid-template-columns: 160px 1fr; gap: var(--sp-6); padding: var(--sp-4) 0; border-top: 1px solid rgba(168,183,204,0.10); color: var(--ahz-muted); font-size: 15px; line-height: 1.6; }
+    .proof-strip li:first-child { border-top: 0; }
+    .proof-strip span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ahz-text); }
+    .header-actions-row { display: flex; justify-content: center; gap: var(--sp-4); flex-wrap: wrap; margin-top: var(--sp-10); }
+    .proof-links { display: flex; justify-content: center; gap: var(--sp-5); flex-wrap: wrap; margin-top: var(--sp-6); color: var(--ahz-faint); font-size: 14px; }
+    .proof-links a { color: var(--ahz-muted); border-bottom: 1px solid rgba(104,216,255,0.24); padding-bottom: 2px; }
+    .proof-links a:hover { color: var(--ahz-sky); border-color: rgba(104,216,255,0.6); }
+    .manifesto-body { padding-bottom: var(--sp-32); }
+    .manifesto-content { max-width: var(--container-narrow); margin: 0 auto; }
+    .manifesto-section { margin-bottom: var(--sp-20); scroll-margin-top: 100px; }
+    .manifesto-section h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 40px); line-height: 1.12; font-weight: 600; letter-spacing: -0.025em; margin-bottom: var(--sp-6); color: var(--ahz-text); text-wrap: balance; }
+    .manifesto-section p { font-size: 17px; line-height: 1.8; color: var(--ahz-muted); margin-bottom: var(--sp-5); }
+    .manifesto-section p:last-child { margin-bottom: 0; }
+    .mission-num { font-family: var(--font-mono); font-size: 11px; color: var(--ahz-sky); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--sp-4); }
+    .pull-quote { border-left: 3px solid var(--ahz-gold); padding: var(--sp-6) var(--sp-8); margin: var(--sp-10) 0; background: rgba(246,200,95,0.05); border-radius: 0 16px 16px 0; }
+    .pull-quote p { font-family: var(--font-display); font-size: clamp(21px, 3vw, 26px); line-height: 1.4; font-weight: 600; color: var(--ahz-text); margin: 0; }
+    .mark-sky { color: var(--ahz-sky); } .mark-green { color: var(--ahz-green); } .mark-gold { color: var(--ahz-gold); }
+    .soft-rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(104,216,255,0.26), rgba(52,211,153,0.16), transparent); margin: var(--sp-12) 0; }
+    .accordion { margin-top: var(--sp-8); border-top: 1px solid rgba(168,183,204,0.14); }
+    .simple-detail, .principle-detail, .phase-detail { border-bottom: 1px solid rgba(168,183,204,0.12); }
+    .simple-detail summary, .principle-detail summary { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); min-height: 64px; list-style: none; cursor: pointer; color: var(--ahz-text); }
+    .simple-detail summary::-webkit-details-marker, .principle-detail summary::-webkit-details-marker, .phase-detail summary::-webkit-details-marker { display: none; }
+    .simple-detail summary::after, .principle-detail summary::after { content: '+'; font-family: var(--font-display); font-size: 24px; color: var(--ahz-sky); transition: transform 160ms ease, color 160ms ease; }
+    .simple-detail[open] summary::after, .principle-detail[open] summary::after { content: '–'; color: var(--ahz-gold); }
+    .simple-detail p, .principle-detail p { padding: 0 0 var(--sp-6); color: var(--ahz-muted); font-size: 16px; line-height: 1.75; }
+    .principle-detail summary { justify-content: flex-start; }
+    .principle-detail summary span { font-family: var(--font-mono); font-size: 12px; color: var(--ahz-faint); min-width: 40px; }
+    .principle-detail summary strong { flex: 1; font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+    .pillar-list { margin-top: var(--sp-10); border-top: 1px solid rgba(168,183,204,0.14); }
+    .pillar-row { display: grid; grid-template-columns: 180px 1fr; gap: var(--sp-8); padding: var(--sp-6) 0; border-bottom: 1px solid rgba(168,183,204,0.12); }
+    .pillar-row span { font-family: var(--font-display); font-size: 20px; line-height: 1.3; font-weight: 600; color: var(--ahz-text); }
+    .pillar-row p { margin: 0; font-size: 16px; color: var(--ahz-muted); }
+    .system-block { margin-top: var(--sp-8); padding: var(--sp-6); border: 1px solid rgba(168,183,204,0.14); border-radius: 18px; background: linear-gradient(180deg, rgba(21,38,63,0.64), rgba(11,22,40,0.58)); overflow-x: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.75; color: var(--ahz-muted); white-space: pre-wrap; }
+    .system-block strong { color: var(--ahz-gold); font-weight: 600; }
+    .model-loop { margin-top: var(--sp-8); border-top: 1px solid rgba(168,183,204,0.14); }
+    .model-loop li { display: grid; grid-template-columns: 44px 1fr; gap: var(--sp-4); padding: var(--sp-4) 0; border-bottom: 1px solid rgba(168,183,204,0.1); color: var(--ahz-muted); }
+    .model-loop span { width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(104,216,255,0.08); border: 1px solid rgba(104,216,255,0.2); color: var(--ahz-sky); font-family: var(--font-mono); font-size: 11px; }
+    .roadmap-top { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); margin: var(--sp-10) 0 var(--sp-6); flex-wrap: wrap; }
+    .roadmap-controls { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+    .timeline { margin-top: var(--sp-10); position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 200px; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, transparent, var(--ahz-line) 5%, var(--ahz-line) 94%, transparent); }
+    .timeline-item { display: flex; gap: var(--sp-8); padding: var(--sp-5) 0; position: relative; align-items: flex-start; }
+    .timeline-year { width: 192px; flex-shrink: 0; font-family: var(--font-mono); font-size: 13px; color: var(--ahz-faint); text-align: right; padding-top: 17px; }
+    .timeline-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 18px; background: var(--ahz-panel-soft); border: 2px solid var(--ahz-line); position: relative; z-index: 1; transition: border-color 220ms, background 220ms, box-shadow 220ms; }
+    .timeline-content { flex: 1; min-width: 0; }
+    .timeline-item:hover .timeline-dot { border-color: var(--ahz-sky); background: rgba(104,216,255,0.2); }
+    .timeline-item.status-done .timeline-dot { border-color: var(--ahz-green); background: rgba(52,211,153,0.22); box-shadow: 0 0 0 5px rgba(52,211,153,0.055); }
+    .timeline-item.status-progress .timeline-dot, .timeline-item.status-milestone .timeline-dot { border-color: var(--ahz-gold); background: rgba(246,200,95,0.22); width: 20px; height: 20px; margin-top: 16px; box-shadow: 0 0 0 5px rgba(246,200,95,0.06); }
+    .timeline-item.status-planned .timeline-dot { border-color: var(--ahz-sky); background: rgba(104,216,255,0.16); }
+    .timeline-item.status-future .timeline-dot { border-color: rgba(168,183,204,0.42); background: rgba(168,183,204,0.10); box-shadow: 0 0 0 5px rgba(168,183,204,0.025); }
+    .timeline-item.status-controlled .timeline-dot { border-color: var(--ahz-red-soft); background: rgba(255,122,122,0.18); }
+    .phase-detail { border-bottom: 0; border-top: 1px solid rgba(168,183,204,0.12); }
+    .phase-detail summary { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--sp-4); align-items: start; padding: var(--sp-5) 52px var(--sp-5) 0; list-style: none; cursor: pointer; color: var(--ahz-text); }
+    .phase-detail summary::after { content: '+'; position: absolute; top: var(--sp-5); right: 0; width: 32px; height: 32px; border-radius: 999px; border: 1px solid rgba(104,216,255,0.24); background: rgba(104,216,255,0.055); color: var(--ahz-sky); display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 20px; line-height: 1; font-weight: 500; transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease; }
+    .phase-detail[open] summary::after { content: '–'; color: var(--ahz-gold); border-color: rgba(246,200,95,0.34); background: rgba(246,200,95,0.08); }
+    .phase-detail summary:hover::after { transform: translateY(-1px); border-color: rgba(104,216,255,0.5); }
+    .phase-detail[open] summary:hover::after { border-color: rgba(246,200,95,0.55); }
+    .phase-title-wrap strong { display: block; margin-bottom: var(--sp-2); font-family: var(--font-display); font-size: 18px; line-height: 1.25; font-weight: 600; color: var(--ahz-text); }
+    .phase-title-wrap em { display: block; max-width: 620px; font-style: normal; font-size: 14px; line-height: 1.65; color: var(--ahz-muted); }
+    .phase-body { padding: 0 0 var(--sp-6); color: var(--ahz-muted); font-size: 14px; line-height: 1.7; }
+    .phase-pillar { display: inline-flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); padding: var(--sp-2) var(--sp-4); border: 1px solid rgba(104,216,255,0.18); border-radius: 999px; background: rgba(104,216,255,0.055); }
+    .phase-pillar span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ahz-faint); }
+    .phase-pillar strong { font-size: 12px; color: var(--ahz-sky); }
+    .phase-body ul { list-style: none; display: grid; gap: var(--sp-2); }
+    .phase-body li { position: relative; padding-left: 18px; }
+    .phase-body li::before { content: '·'; position: absolute; left: 0; top: -1px; color: var(--ahz-green); font-size: 20px; line-height: 1; }
+    .architecture-block { margin-top: var(--sp-8); padding: var(--sp-6); border-radius: 18px; border: 1px solid rgba(168,183,204,0.14); background: rgba(7,17,31,0.38); overflow-x: auto; }
+    .architecture-block code { display: block; font-family: var(--font-mono); font-size: 13px; line-height: 1.85; color: var(--ahz-muted); white-space: pre; }
+    .architecture-block b { color: var(--ahz-sky); font-weight: 600; }
+    .contact-card { position: relative; overflow: hidden; margin-top: var(--sp-8); padding: var(--sp-8); border: 1px solid rgba(52,211,153,0.30); border-radius: 24px; background: radial-gradient(circle at 14% 0%, rgba(52,211,153,0.24), transparent 34%), radial-gradient(circle at 88% 100%, rgba(74,222,128,0.11), transparent 36%), linear-gradient(180deg, rgba(7,47,38,0.86), rgba(4,32,28,0.80)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 18px 52px rgba(0,0,0,0.14); }
+    .contact-card::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(52,211,153,0.14), transparent 42%); opacity: 0.78; }
+    .contact-card > * { position: relative; z-index: 1; }
+    .email-cta { position: relative; display: inline-flex; margin-top: var(--sp-6); padding-bottom: 5px; font-family: var(--font-display); font-size: clamp(22px, 4.8vw, 30px); line-height: 1.2; font-weight: 600; color: #FFFFFF; overflow-wrap: anywhere; }
+    .email-cta span { color: #FFFFFF; transition: color 180ms ease; }
+    .email-cta::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 999px; background: rgba(255,255,255,0.76); transition: background 180ms ease, opacity 180ms ease; }
+    .email-cta::after { content: attr(data-copy-label); position: absolute; left: 0; top: calc(100% + 10px); padding: 6px 10px; border: 1px solid rgba(52,211,153,0.26); border-radius: 999px; background: rgba(7,17,31,0.84); color: var(--ahz-green); font-family: var(--font-mono); font-size: 10px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity 160ms ease, transform 160ms ease; white-space: nowrap; }
+    .email-cta:hover span, .email-cta:focus-visible span { background: var(--grad-button); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .email-cta:hover::before, .email-cta:focus-visible::before { background: var(--grad-button); opacity: 0.95; }
+    .email-cta:hover::after, .email-cta:focus-visible::after { opacity: 1; transform: translateY(0); }
+    .site-footer { border-top: 1px solid rgba(168,183,204,0.12); padding: var(--sp-8) 0; color: var(--ahz-faint); }
+    .footer-inner { max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--sp-6); display: flex; justify-content: center; align-items: center; gap: var(--sp-6); flex-wrap: nowrap; text-align: center; }
+    .footer-brand { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--ahz-text); white-space: nowrap; }
+    .footer-copy { font-size: 13px; white-space: nowrap; }
+    .footer-copy[href] { transition: color 160ms ease; }
+    .footer-copy[href]:hover { color: var(--ahz-sky); }
+    .manifesto-content, .timeline-content, .phase-title-wrap, .contact-card, .footer-inner, .footer-brand, .footer-copy { min-width: 0; }
+    .footer-brand, .footer-copy { max-width: 100%; overflow-wrap: anywhere; }
+    @media (max-width: 980px) {
+      .footer-inner { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; justify-content: center; gap: var(--sp-3); text-align: center; }
+      .footer-brand, .footer-copy { white-space: normal; }
+      .site-footer { padding: var(--sp-8) 0 calc(var(--sp-8) + env(safe-area-inset-bottom, 0px)); }
+      .site-nav, .header-cta { display: none; }
+      .btn-hamburger { display: inline-flex; margin-left: auto; }
+      .header-inner { padding: 0 var(--sp-5); gap: var(--sp-4); }
+      .manifesto-page { padding-top: 72px; }
+      .manifesto-header { padding: 34px 0 60px; text-align: left; }
+      .hero-badge-row, .header-actions-row, .proof-links { justify-content: flex-start; }
+      .timeline::before { left: 7px; }
+      .timeline-item { display: grid; grid-template-columns: 16px 1fr; gap: var(--sp-5); padding-left: 0; }
+      .timeline-year { grid-column: 2; width: auto; text-align: left; padding-top: 0; margin-bottom: -10px; }
+      .timeline-dot { grid-column: 1; grid-row: 1 / span 2; margin-top: 24px; }
+      .timeline-content { grid-column: 2; }
+    }
+    @media (max-width: 720px) {
+      #site-header { height: 64px; }
+      .logo-icon { width: 38px; height: 46px; transform: translateY(0); } .logo-text { font-size: 20px; line-height: 1; }
+      .manifesto-page { padding-top: 64px; }
+      .manifesto-header { padding: 26px 0 54px; text-align: left; }
+      .manifesto-header p { font-size: 16px; }
+      .hero-badge-row { justify-content: flex-start; }
+      .header-actions-row, .proof-links { justify-content: flex-start; }
+      .proof-strip li { grid-template-columns: 1fr; gap: var(--sp-1); }
+      .manifesto-section { margin-bottom: var(--sp-16); }
+      .manifesto-section p { font-size: 16px; }
+      .pull-quote { padding: var(--sp-5) var(--sp-5); }
+      .pillar-row { grid-template-columns: 1fr; gap: var(--sp-2); }
+      .phase-detail summary { grid-template-columns: 1fr; gap: var(--sp-3); padding-right: 44px; }
+      .phase-detail summary::after { width: 30px; height: 30px; font-size: 19px; }
+      .badge { width: fit-content; }
+      .contact-card { padding: var(--sp-6); }
+      .footer-inner { display: grid; grid-template-columns: 1fr; justify-items: center; justify-content: center; gap: var(--sp-2); text-align: center; }
+      .footer-brand, .footer-copy { white-space: normal; }
+    }
+
+    @media (max-width: 520px) {
+      .container { padding: 0 var(--sp-4); }
+      .header-inner { padding: 0 var(--sp-4); }
+      .manifesto-header { padding-top: 22px; }
+      .manifesto-header h1 { font-size: clamp(34px, 11vw, 42px); }
+      .header-actions-row { align-items: stretch; }
+      .header-actions-row .btn { width: 100%; justify-content: center; }
+      .proof-links { gap: var(--sp-4); }
+      .roadmap-top { align-items: stretch; }
+      .roadmap-controls { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+      .roadmap-controls .btn { width: 100%; justify-content: center; padding: 0 var(--sp-4); }
+      .timeline-item { gap: var(--sp-4); }
+      .timeline-content { min-width: 0; }
+      .phase-title-wrap strong { font-size: 17px; }
+      .phase-title-wrap em, .phase-body { font-size: 13.5px; }
+      .architecture-block { padding: var(--sp-5); }
+      .architecture-block code { font-size: 12px; }
+      .footer-inner { gap: var(--sp-3); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header">
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a class="logo-wrap" href="#top" aria-label="AHAZAZA home">
+        <svg class="logo-icon" viewBox="0 0 120 128" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <mask id="ahazazaMarkMaskHeader" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="128">
+              <rect width="120" height="128" fill="white"/>
+              <path d="M60 12 L20 98 L60 113 L100 98 Z" fill="none" stroke="black" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M60 12 L60 113" fill="none" stroke="black" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </mask>
+          </defs>
+          <path d="M60 12 L20 98 L60 113 L100 98 Z" fill="currentColor" mask="url(#ahazazaMarkMaskHeader)"/>
+        </svg>
+        <span class="logo-text">AHAZAZA</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="#mission">Mission</a>
+        <a class="nav-link" href="#system">System</a>
+        <a class="nav-link" href="#roadmap">Roadmap</a>
+        <a class="nav-link" href="#principles">Principles</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <div class="header-cta"><a class="btn btn-secondary btn-sm" href="mailto:contact@ahazaza.rw">contact@ahazaza.rw</a></div>
+      <button class="btn-hamburger" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" id="menuClose" type="button" aria-label="Close menu">×</button>
+    <a class="mobile-nav-link" href="#mission">Mission</a>
+    <a class="mobile-nav-link" href="#system">System</a>
+    <a class="mobile-nav-link" href="#roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="#principles">Principles</a>
+    <a class="mobile-nav-link" href="#contact">Contact</a>
+    <div class="mobile-cta"><a class="btn btn-primary" href="#contact">Contact AHAZAZA</a></div>
+  </div>
+
+  <main id="main" class="manifesto-page">
+    <section class="manifesto-header" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-badge-row reveal">
+          <span class="badge badge-blue badge-dot">AHAZAZA TECHNOLOGIES LTD</span>
+          <span class="badge badge-green">Rwanda First</span>
+          <span class="badge badge-gold">AI-Native</span>
+        </div>
+        <h1 id="hero-title" class="reveal reveal-delay-1">AI-native infrastructure for <span class="accent">Rwanda’s commerce value chains.</span></h1>
+        <p class="reveal reveal-delay-2">AHAZAZA is building the intelligence layer for the commerce value chains that grow, move, sell, finance, insure, and trust the products Rwanda depends on — coordinating <span class="mark-sky">demand</span>, <span class="mark-green">supply</span>, logistics, quality, payments, compliance, and Kinyarwanda-native communication through one operating system.</p>
+        <ul class="proof-strip reveal reveal-delay-3" aria-label="AHAZAZA proof points">
+          <li><span>Started</span>Started with Ijwi — proving Kinyarwanda-native AI.</li>
+          <li><span>Validating</span>Now validating Wahageze — Agribusiness Value Chains.</li>
+          <li><span>Built</span>Building in Rwanda first — then exporting what Rwanda proves.</li>
+        </ul>
+        <div class="header-actions-row reveal reveal-delay-3">
+          <a class="btn btn-primary" href="#roadmap">Follow the roadmap</a>
+          <a class="btn btn-secondary" href="#contact">Contact AHAZAZA</a>
+        </div>
+        <div class="proof-links reveal reveal-delay-3" aria-label="Related proof links">
+          <a href="https://ijwi.rw" target="_blank" rel="noopener noreferrer">ijwi.rw ↗</a>
+          <a href="https://wahageze.com" target="_blank" rel="noopener noreferrer">wahageze.com ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="manifesto-body">
+      <div class="container">
+        <div class="manifesto-content">
+          <section class="manifesto-section reveal" id="mission">
+            <div class="mission-num">01 — Mission</div>
+            <h2>Rwanda’s commerce value chains need intelligence infrastructure, not disconnected apps.</h2>
+            <p>AHAZAZA exists to make Rwanda’s commerce value chains more coordinated, predictable, financed, insured, trusted, data-driven, and accessible through <span class="mark-sky">Kinyarwanda-native AI</span>.</p>
+            <p>The first proof is not a broad marketplace. It is a focused agribusiness operating loop: <span class="mark-gold">recurring demand</span>, reliable sourcing, scheduled fulfillment, supplier quality, logistics coordination, and structured data.</p>
+            <p>From that first commerce loop, AHAZAZA builds the systems required to coordinate larger value chains across production, distribution, retail, services, financing, insurance, and trust.</p>
+            <div class="pull-quote reveal"><p>The opportunity is not only to sell products. It is to make Rwanda’s commerce value chains work intelligently.</p></div>
+          </section>
+
+          <section class="manifesto-section reveal" id="vision">
+            <div class="mission-num">02 — Vision</div>
+            <h2>Build Rwanda first. Export what Rwanda proves.</h2>
+            <p>AHAZAZA’s vision is to build the AI-native infrastructure that powers Rwanda’s commerce value chains — the practical rails behind how products are grown, made, moved, sold, financed, insured, trusted, and eventually exported. Once Rwanda is proven and scaled, that infrastructure becomes the launchpad for taking Made-in-Rwanda products, services, and operating systems to East Africa, Africa, and the world.</p>
+            <p>External expansion is not the first step. <span class="mark-green">Rwanda is the proof ground</span>, the foundation, and the first responsibility.</p>
+            <div class="accordion reveal">
+              <details class="simple-detail">
+                <summary><strong>Why not expand outside Rwanda immediately?</strong></summary>
+                <p>External expansion comes only after Rwanda’s commerce system is operationally mature: trusted brand, proven unit economics, reliable suppliers, mature Hafi operations, tested Heza partner structures, export-ready Made-in-Rwanda products, and AHAZAZA Core strong enough to support repeatable playbooks.</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="manifesto-section reveal" id="system">
+            <div class="mission-num">03 — System</div>
+            <h2>Four public pillars. One invisible core.</h2>
+            <p>AHAZAZA is not a single app. It is a system of public execution engines that coordinate commerce — supported by a private trust, data, compliance, quality, and risk layer.</p>
+            <div class="pillar-list">
+      <div class="pillar-row reveal">
+        <span>Ijwi</span>
+        <p>AI-native operations assistant and Kinyarwanda interface for commerce tasks.</p>
+      </div>
+      <div class="pillar-row reveal">
+        <span>Wahageze</span>
+        <p>Demand, procurement, pricing, marketplace, and analytics engine for commerce value chains.</p>
+      </div>
+      <div class="pillar-row reveal">
+        <span>Hafi</span>
+        <p>Logistics, storage, packaging, routing, hubs, and physical fulfillment.</p>
+      </div>
+      <div class="pillar-row reveal">
+        <span>Heza</span>
+        <p>Supplier quality, advisory, finance-readiness, insurance-readiness, and risk intelligence.</p>
+      </div>
+            </div>
+            <pre class="system-block"><strong>AHAZAZA Core</strong>
+Trust • Data • Identity • Compliance • Quality • Standards • Risk Controls • Human Escalation</pre>
+          </section>
+
+          <section class="manifesto-section reveal" id="business-model">
+            <div class="mission-num">04 — Business Model</div>
+            <h2>Predictable demand before heavy infrastructure.</h2>
+            <p>AHAZAZA starts with agribusiness value chains because predictable, recurring demand makes supply easier to plan, logistics easier to route, financing easier to underwrite, insurance easier to structure, and growth easier to bootstrap.</p>
+            <p>The first expression is Wahageze’s weekly fruit and vegetable box: households create known demand before sourcing, suppliers receive clearer signals, and delivery happens on a planned rhythm.</p>
+            <p>That discipline becomes the model across commerce: subscriptions, standing orders, replenishment cycles, B2B procurement, institutional buying, preorders, and milestone-based supply.</p>
+            <ol class="model-loop reveal" aria-label="Business model compounding loop">
+              <li><span>01</span>More recurring demand creates better supply intelligence.</li>
+              <li><span>02</span>Better supply intelligence improves quality, pricing, and forecasting.</li>
+              <li><span>03</span>Better forecasting improves routing, fulfillment, and trust.</li>
+              <li><span>04</span>More trust increases repeat orders, finance-readiness, and insurance-readiness.</li>
+            </ol>
+            <div class="accordion reveal">
+              <details class="simple-detail">
+                <summary><strong>How the model compounds</strong></summary>
+                <p>More recurring demand creates better supply intelligence. Better supply intelligence improves quality, pricing, and forecasting. Better forecasting improves routing and fulfillment. Better fulfillment improves trust. More trust increases repeat orders. Repeat orders create finance-readiness and insurance-readiness data. The operating system becomes stronger with every completed transaction.</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="manifesto-section reveal" id="roadmap">
+            <div class="mission-num">05 — Roadmap</div>
+            <h2>AHAZAZA grows by commerce capability compounding.</h2>
+            <p>The roadmap is not a jump from one industry to another. Each phase is unlocked by something AHAZAZA already proves inside Rwanda’s commerce value chains: customer relationships, supplier bases, delivery routes, quality standards, datasets, operational playbooks, finance-readiness signals, or trust infrastructure.</p>
+            <div class="roadmap-top reveal">
+              <div class="section-label" style="margin-bottom:0"><div class="section-label-line"></div><span>Controlled timeline</span></div>
+              <div class="roadmap-controls">
+                <button class="btn btn-secondary btn-sm" type="button" data-open-roadmap>Open all</button>
+                <button class="btn btn-secondary btn-sm" type="button" data-close-roadmap>Close all</button>
+              </div>
+            </div>
+            <div class="timeline" aria-label="AHAZAZA capability roadmap">
+      <div class="timeline-item roadmap-item reveal status-done" data-phase="-1">
+        <span class="timeline-year">Phase -1</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail" open data-default-open="true">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Ijwi Proof</strong>
+                <em>Prove that practical AI can work in Kinyarwanda and become the interface for Rwanda’s commerce operations.</em>
+              </span>
+              <span class="badge badge-green badge-dot">Done</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Ijwi</strong></div>
+              <ul><li>Status: Done / validated through ijwi.rw.</li><li>Main pillar: Ijwi.</li><li>Proves Kinyarwanda AI interaction, voice-based commerce access, and AHAZAZA’s language moat.</li><li>Gate: Ijwi can convert user requests into structured commerce tasks.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-progress" data-phase="0">
+        <span class="timeline-year">Phase 0</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail" open data-default-open="true">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Wahageze Agribusiness Validation</strong>
+                <em>Use weekly prepaid fruit and vegetable boxes to prove agribusiness demand, predictable sourcing, supplier quality, and bootstrap-friendly cash flow.</em>
+              </span>
+              <span class="badge badge-gold badge-dot">In Progress</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze + Heza + Hafi + Ijwi</strong></div>
+              <ul><li>Status: In progress through wahageze.com.</li><li>Main pillars: Wahageze + Heza + Hafi + Ijwi.</li><li>Scope: fruits and vegetables, Kigali households, weekly fulfillment rhythm, pre-funded orders, supplier reliability data.</li><li>Gate: customers prepay and repeat; delivery works; quality complaints are controlled; supplier scores become meaningful.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-planned" data-phase="1">
+        <span class="timeline-year">Phase 1</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail" open data-default-open="true">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Heza Supplier Intelligence</strong>
+                <em>Make farmers, suppliers, and products measurable, reliable, quality-aware, and finance-ready before scaling commerce categories.</em>
+              </span>
+              <span class="badge badge-blue badge-dot">Planned</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Heza</strong></div>
+              <ul><li>Main pillar: Heza.</li><li>Scope: onboarding, product grading, quality rules, advisory, finance-readiness, insurance-readiness.</li><li>Gate: supplier scoring predicts reliability and quality.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-planned" data-phase="2">
+        <span class="timeline-year">Phase 2</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>AHAZAZA Core v1</strong>
+                <em>Turn every order, delivery, payment, complaint, supplier action, and support request into trust data, compliance records, and operational intelligence.</em>
+              </span>
+              <span class="badge badge-blue badge-dot">Planned</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>AHAZAZA Core</strong></div>
+              <ul><li>Main pillar: AHAZAZA Core.</li><li>Scope: identity, consent, data standards, audit logs, quality records, human escalation.</li><li>Gate: every meaningful operational event creates a structured record.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-planned" data-phase="3">
+        <span class="timeline-year">Phase 3</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Wahageze Fresh</strong>
+                <em>Expand from horticulture into a fuller fresh-food commerce basket without breaking customer trust or fulfillment quality.</em>
+              </span>
+              <span class="badge badge-blue badge-dot">Planned</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze Fresh</strong></div>
+              <ul><li>Sequence: fruits and vegetables → eggs/dry foods → poultry with verified partners → dairy with cold-chain partners → meat only after handling standards mature.</li><li>Gate: new categories increase retention and order value without damaging reliability.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-planned" data-phase="4">
+        <span class="timeline-year">Phase 4</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Hafi Food Fulfillment</strong>
+                <em>Build the physical rails for fresh-food commerce: handling, delivery, packaging, routing, and micro-hubs.</em>
+              </span>
+              <span class="badge badge-blue badge-dot">Planned</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Hafi</strong></div>
+              <ul><li>Main pillar: Hafi.</li><li>Rule: orchestrate first, own later only when strategic.</li><li>Gate: delivery cost, on-time rate, spoilage, and route density are understood and improving.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-planned" data-phase="5">
+        <span class="timeline-year">Phase 5</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Wahageze Business</strong>
+                <em>Move from household agribusiness demand to recurring procurement for restaurants, cafés, hotels, caterers, and food-service operators.</em>
+              </span>
+              <span class="badge badge-blue badge-dot">Planned</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze Business</strong></div>
+              <ul><li>Start with procurement, not on-demand restaurant delivery.</li><li>Gate: B2B buyers reorder weekly and improve route density.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="6">
+        <span class="timeline-year">Phase 6</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Hospitality Operations Supply</strong>
+                <em>Expand from food procurement into the back-of-house supplies the same hospitality customers already need.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze + Hafi</strong></div>
+              <ul><li>Categories: packaging, cleaning supplies, napkins, kitchen tools, linens, uniforms, event consumables, maintenance consumables.</li><li>Gate: non-food categories increase share of wallet without weakening food operations.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="7">
+        <span class="timeline-year">Phase 7</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Wahageze Supply</strong>
+                <em>Serve micro-retail, kiosks, mini-markets, and SMEs using the same supplier relationships, routes, and replenishable commerce categories.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze Supply + Ijwi</strong></div>
+              <ul><li>Main pillar: Wahageze Supply + Ijwi.</li><li>Gate: shops reorder frequently and delivery economics make sense.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="8">
+        <span class="timeline-year">Phase 8</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Hafi Infrastructure Services</strong>
+                <em>Externalize the logistics, storage, packaging, hub, and routing capabilities AHAZAZA had to build for its own commerce operations.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Hafi</strong></div>
+              <ul><li>Main pillar: Hafi.</li><li>Gate: internal Hafi systems work consistently and external customers pay for them.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="9">
+        <span class="timeline-year">Phase 9</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Hafi Build / Wahageze Build</strong>
+                <em>Use AHAZAZA’s own facility build-out experience to support commerce infrastructure: storage, kitchens, cold rooms, retail setup, and construction-adjacent supply.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Hafi Build + Wahageze Build</strong></div>
+              <ul><li>Main pillars: Hafi Build + Wahageze Build.</li><li>Gate: facility setup projects are repeatable, profitable, and linked to existing customers.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="10">
+        <span class="timeline-year">Phase 10</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Wahageze Made in Rwanda</strong>
+                <em>Use proven demand from households, businesses, institutions, and facilities to distribute Made-in-Rwanda products from local producers.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze Made in Rwanda + Heza</strong></div>
+              <ul><li>Main pillar: Wahageze Made in Rwanda + Heza.</li><li>Gate: local producers meet quality, packaging, pricing, and delivery standards.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="11">
+        <span class="timeline-year">Phase 11</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Wahageze Institutions</strong>
+                <em>Create anchor commerce demand through schools, offices, events, organizations, NGOs, and formal buyers.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Wahageze Institutions + Ijwi</strong></div>
+              <ul><li>Main pillar: Wahageze Institutions + Ijwi.</li><li>Gate: institutions create predictable recurring procurement and service contracts.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="12">
+        <span class="timeline-year">Phase 12</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Hafi Circular</strong>
+                <em>Close the loop across commerce through reverse logistics, reusable packaging, organic waste, compost, recycling, and circular supply.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>Hafi Circular</strong></div>
+              <ul><li>Main pillar: Hafi Circular.</li><li>Gate: existing customers generate enough recurring reverse-logistics volume.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-controlled" data-phase="13">
+        <span class="timeline-year">Phase 13</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Regulated Essential Services</strong>
+                <em>Enter healthcare logistics, energy, finance, insurance-heavy products, and other high-trust services only through mature, licensed partner structures.</em>
+              </span>
+              <span class="badge badge-red badge-dot">Controlled</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>AHAZAZA Core + licensed partners</strong></div>
+              <ul><li>Main pillar: AHAZAZA Core + licensed partners.</li><li>Gate: compliance, liability, licensed partners, and risk controls are mature.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-milestone" data-phase="14">
+        <span class="timeline-year">Phase 14</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Rwanda on Lock</strong>
+                <em>AHAZAZA becomes a trusted AI-native operating layer for Rwanda’s commerce value chains.</em>
+              </span>
+              <span class="badge badge-gold badge-dot">Milestone</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>AHAZAZA</strong></div>
+              <ul><li>Must prove: unit economics, trust, operations, compliance, multi-sector playbooks, reliable data, mature teams, repeatable systems.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="timeline-item roadmap-item reveal status-future" data-phase="15">
+        <span class="timeline-year">Phase 15</span>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <details class="phase-detail">
+            <summary>
+              <span class="phase-title-wrap">
+                <strong>Made in Rwanda to the World</strong>
+                <em>Only after Rwanda is proven, export Made-in-Rwanda products, services, AI tools, and commerce operating-system playbooks to East Africa, Africa, and global markets.</em>
+              </span>
+              <span class="badge badge-muted badge-dot">Future</span>
+            </summary>
+            <div class="phase-body">
+              <div class="phase-pillar"><span>Main layer</span><strong>AHAZAZA Export Layer</strong></div>
+              <ul><li>Sequence: East Africa → Africa → Global.</li><li>Rule: export only what Rwanda has proven.</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+            </div>
+          </section>
+
+          <section class="manifesto-section reveal" id="principles">
+            <div class="mission-num">06 — Principles</div>
+            <h2>The rules that protect the commerce mission.</h2>
+            <p>These principles keep the operating system disciplined, grounded, and protected from random expansion beyond the commerce value chains AHAZAZA can truly serve.</p>
+            <div class="accordion">
+      <details class="principle-detail reveal">
+        <summary><span>01</span><strong>Rwanda first, then outward.</strong></summary>
+        <p>Rwanda is the proof ground, the foundation, and the first responsibility. External expansion should come only after the local system has earned trust, reliability, and repeatable operating playbooks.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>02</span><strong>AI-native from the beginning.</strong></summary>
+        <p>AHAZAZA is not adding AI after operations are built. Ijwi and AHAZAZA Core make language access, task routing, commerce records, quality checks, and human escalation part of the operating system from day one.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>03</span><strong>Predictable commerce demand before heavy operations.</strong></summary>
+        <p>Recurring, pre-funded demand gives the company a clearer signal before investing in infrastructure. It makes sourcing, routing, quality, financing, and retention easier to understand.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>04</span><strong>Capability before category.</strong></summary>
+        <p>AHAZAZA should expand only when an existing capability makes the next category easier to serve. New sectors are earned through trust, data, routes, suppliers, standards, and operational maturity.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>05</span><strong>Same customer, more products; same product, new customers.</strong></summary>
+        <p>Growth should compound from relationships already created. The best expansion path uses the same buyers, suppliers, routes, and data before opening disconnected commerce lanes.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>06</span><strong>Heza starts with readiness, not reckless lending.</strong></summary>
+        <p>Heza should first measure quality, reliability, records, advisory needs, finance-readiness, and insurance-readiness. Capital becomes safer only when the operating data is strong enough to support partner decisions.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>07</span><strong>Hafi starts asset-smart.</strong></summary>
+        <p>Hafi should orchestrate before owning heavy infrastructure. Ownership should come only when route density, quality requirements, cost control, and strategic importance justify it.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>08</span><strong>AHAZAZA Core is mandatory.</strong></summary>
+        <p>Trust, identity, data standards, compliance, quality, risk controls, and human escalation are not optional support layers. They are the internal infrastructure that protects every public commerce pillar.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>09</span><strong>Regulated sectors come late and partner-led.</strong></summary>
+        <p>Healthcare, energy, finance, insurance-heavy products, and other high-trust services require licensing, liability controls, and mature partners. They should be entered carefully after the system can handle the risk.</p>
+      </details>
+      <details class="principle-detail reveal">
+        <summary><span>10</span><strong>Export only what Rwanda has proven.</strong></summary>
+        <p>Made-in-Rwanda expansion should be based on local operating evidence, not ambition alone. AHAZAZA should export products, services, AI tools, and commerce playbooks only after Rwanda has proven them locally.</p>
+      </details>
+            </div>
+          </section>
+
+          <section class="manifesto-section reveal" id="architecture">
+            <div class="mission-num">07 — Brand architecture</div>
+            <h2>One company. One system. Clear product layers.</h2>
+            <p>AHAZAZA is the company and operating system for Rwanda’s commerce value chains. Ijwi, Wahageze, Hafi, and Heza are the execution engines. Each product can grow, but none should become a disconnected business.</p>
+            <div class="architecture-block reveal"><code><b>AHAZAZA</b> = company + commerce operating system
+<b>Ijwi</b> = AI-native operations interface
+<b>Wahageze Fresh</b> = household fresh-food demand
+<b>Wahageze Business</b> = hospitality procurement
+<b>Wahageze Supply</b> = micro-retail replenishment
+<b>Wahageze Build</b> = facility and construction-adjacent supply
+<b>Wahageze Made in Rwanda</b> = local producer distribution
+<b>Wahageze Institutions</b> = institutional procurement
+<b>Hafi</b> = logistics and physical fulfillment
+<b>Hafi Build</b> = facility setup and heavy/bulky logistics
+<b>Hafi Circular</b> = reverse logistics and circular flows
+<b>Heza</b> = supplier quality, advisory, finance-readiness, insurance-readiness
+<b>AHAZAZA Core</b> = trust, data, compliance, standards, risk controls
+</code></div>
+          </section>
+
+          <section class="manifesto-section reveal" id="future">
+            <div class="mission-num">08 — Future</div>
+            <h2>AHAZAZA means future.</h2>
+            <p>The future begins locally, inside the value chains Rwanda already depends on.</p>
+            <p>AHAZAZA starts by proving one narrow agribusiness value chain in Rwanda: recurring fruit and vegetable demand, structured supplier operations, planned logistics, and trusted fulfillment. From there, every capability that works becomes a stronger layer of the operating system.</p>
+            <p>The goal is not to expand for the sake of expansion. The goal is to make Rwanda’s commerce value chains more intelligent, then carry Made-in-Rwanda products, services, and systems outward only after the local model is mature.</p>
+            <div class="pull-quote reveal"><p>AHAZAZA is building the infrastructure for a Rwanda where commerce value chains can see demand, move products, finance growth, insure risk, coordinate work, and learn from every transaction.</p></div>
+          </section>
+
+          <section class="manifesto-section contact-section reveal" id="contact">
+            <div class="mission-num">09 — Contact</div>
+            <h2>Be part of building Rwanda’s AI-native commerce infrastructure.</h2>
+            <div class="contact-card reveal">
+              <p>AHAZAZA is open to serious conversations with partners, operators, producers, suppliers, institutions, logistics providers, financial and insurance partners, talent, capital, and collaborators who want to help build Rwanda’s commerce value chains into systems the world can learn from.</p>
+              <a class="email-cta" href="mailto:contact@ahazaza.rw" data-copy-email="contact@ahazaza.rw" data-copy-label="Click to copy" aria-label="Copy contact email address"><span>contact@ahazaza.rw</span></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">© 2026 AHAZAZA TECHNOLOGIES LTD</div>
+      <div class="footer-copy">AI-native infrastructure for Rwanda’s commerce value chains.</div>
+      <a class="footer-copy" href="mailto:contact@ahazaza.rw">contact@ahazaza.rw</a>
+    </div>
+  </footer>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AHAZAZA TECHNOLOGIES LTD","url":"https://ahazaza.rw","email":"contact@ahazaza.rw","description":"AI-native infrastructure for Rwanda’s commerce value chains."}</script>
+  <script>
+    (() => {
+      const header = document.getElementById('site-header');
+      const progress = document.querySelector('.scroll-progress');
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('menuClose');
+      const contactEmailCopy = document.querySelector('[data-copy-email]');
+      const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+      const mobileLinks = Array.from(document.querySelectorAll('.mobile-nav-link'));
+      const sections = ['mission','system','roadmap','principles','contact'].map(id => document.getElementById(id)).filter(Boolean);
+      const setScrollState = () => {
+        const scrolled = window.scrollY > 24;
+        header.classList.toggle('scrolled', scrolled);
+        const scrollTop = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
+        const viewportHeight = window.visualViewport?.height || window.innerHeight;
+        const docHeight = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
+        const ratio = docHeight > 0 ? scrollTop / docHeight : 0;
+        progress.style.setProperty('--scroll-progress-scale', String(Math.min(1, Math.max(0, ratio))));
+      };
+      setScrollState();
+      window.addEventListener('scroll', setScrollState, { passive: true });
+      window.addEventListener('resize', setScrollState, { passive: true });
+      window.visualViewport?.addEventListener('resize', setScrollState, { passive: true });
+      window.visualViewport?.addEventListener('scroll', setScrollState, { passive: true });
+      window.addEventListener('orientationchange', setScrollState, { passive: true });
+      const setMenu = (open) => {
+        mobileMenu.classList.toggle('open', open);
+        mobileMenu.setAttribute('aria-hidden', String(!open));
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        header.classList.toggle('menu-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+      menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+      menuClose.addEventListener('click', () => setMenu(false));
+      Array.from(mobileMenu.querySelectorAll('a')).forEach(link => link.addEventListener('click', () => setMenu(false)));
+      mobileLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
+      contactEmailCopy?.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const email = contactEmailCopy.dataset.copyEmail || 'contact@ahazaza.rw';
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = email;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            textarea.remove();
+          }
+          contactEmailCopy.dataset.copyLabel = 'Copied';
+          window.setTimeout(() => { contactEmailCopy.dataset.copyLabel = 'Click to copy'; }, 1600);
+        } catch (error) {
+          contactEmailCopy.dataset.copyLabel = 'Copy manually';
+          window.setTimeout(() => { contactEmailCopy.dataset.copyLabel = 'Click to copy'; }, 1800);
+        }
+      });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+      const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }) : null;
+      document.querySelectorAll('.reveal').forEach(el => revealObserver ? revealObserver.observe(el) : el.classList.add('visible'));
+      const activeObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id;
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+        });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 }) : null;
+      sections.forEach(section => activeObserver && activeObserver.observe(section));
+      const phaseDetails = Array.from(document.querySelectorAll('.phase-detail'));
+      const applyRoadmapDefaults = () => {
+        const desktop = window.matchMedia('(min-width: 721px)').matches;
+        phaseDetails.forEach(detail => {
+          if (detail.dataset.touched === 'true') return;
+          detail.open = desktop && detail.dataset.defaultOpen === 'true';
+        });
+      };
+      phaseDetails.forEach(detail => detail.addEventListener('toggle', () => { detail.dataset.touched = 'true'; }));
+      applyRoadmapDefaults();
+      window.addEventListener('resize', applyRoadmapDefaults);
+      document.querySelector('[data-open-roadmap]')?.addEventListener('click', () => phaseDetails.forEach(d => { d.dataset.touched = 'true'; d.open = true; }));
+      document.querySelector('[data-close-roadmap]')?.addEventListener('click', () => phaseDetails.forEach(d => { d.dataset.touched = 'true'; d.open = false; }));
+    })();
+  </script>
+</body>
+</html>
