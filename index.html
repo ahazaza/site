@@ -74,17 +74,13 @@
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; background: var(--ahz-ink); color-scheme: dark; }
     body {
       font-family: var(--font-sans);
-      background:
-        radial-gradient(circle at 20% 10%, rgba(47,128,255,0.26), transparent 32%),
-        radial-gradient(circle at 80% 20%, rgba(52,211,153,0.16), transparent 30%),
-        radial-gradient(circle at 50% 90%, rgba(246,200,95,0.10), transparent 35%),
-        #07111F;
-      background-attachment: fixed;
+      background: #07111F;
       color: var(--ahz-text);
       line-height: 1.7;
       font-size: 16px;
       overflow-x: hidden;
       text-rendering: optimizeLegibility;
+      isolation: isolate;
     }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
@@ -94,13 +90,19 @@
     :focus-visible { outline: 2px solid var(--ahz-sky); outline-offset: 4px; border-radius: 10px; }
     ::selection { background: rgba(104,216,255,0.28); color: white; }
     .page-bg {
-      position: fixed; inset: 0; z-index: -1;
+      position: fixed; inset: 0; z-index: 0;
+      width: 100vw; min-height: 100vh; min-height: 100dvh;
+      pointer-events: none;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
       background:
         radial-gradient(circle at 20% 10%, rgba(47,128,255,0.26), transparent 32%),
         radial-gradient(circle at 80% 20%, rgba(52,211,153,0.16), transparent 30%),
         radial-gradient(circle at 50% 90%, rgba(246,200,95,0.10), transparent 35%),
         #07111F;
     }
+    .skip-link, .manifesto-page, .site-footer { position: relative; z-index: 1; }
     .page-bg::after {
       content: ''; position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
@@ -124,7 +126,7 @@
     .nav-link:hover, .nav-link.active { color: var(--ahz-text); background: rgba(168,183,204,0.08); }
     .header-cta { display: flex; align-items: center; gap: var(--sp-4); flex-shrink: 0; }
     .btn-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--ahz-text); padding: var(--sp-2); min-width:44px; min-height:44px; align-items:center; justify-content:center; }
-    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(7,17,31,0.97); backdrop-filter: blur(20px); flex-direction: column; padding: 88px var(--sp-6) var(--sp-8); }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: radial-gradient(circle at 20% 10%, rgba(47,128,255,0.26), transparent 32%), radial-gradient(circle at 80% 20%, rgba(52,211,153,0.16), transparent 30%), radial-gradient(circle at 50% 90%, rgba(246,200,95,0.10), transparent 35%), rgba(7,17,31,0.97); backdrop-filter: blur(20px); flex-direction: column; padding: 88px var(--sp-6) var(--sp-8); }
     .mobile-menu.open { display: flex; }
     .mobile-nav-link { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--ahz-muted); padding: var(--sp-4) 0; border-bottom: 1px solid rgba(37,58,89,0.5); cursor: pointer; transition: color 160ms; }
     .mobile-nav-link:hover { color: var(--ahz-text); }
