@@ -93,6 +93,7 @@
       position: fixed; inset: 0; z-index: 0;
       width: 100vw; min-height: 100vh; min-height: 100dvh;
       pointer-events: none;
+      contain: strict;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
@@ -104,7 +105,7 @@
     }
     .skip-link, .manifesto-page, .site-footer { position: relative; z-index: 1; }
     .page-bg::after {
-      content: ''; position: fixed; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none; opacity: 0.5;
     }
@@ -152,9 +153,10 @@
     .section-label { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-5); }
     .section-label-line { width: 32px; height: 2px; background: var(--grad-button); border-radius: 1px; }
     .section-label span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ahz-sky); }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease, transform 600ms ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 100ms; } .reveal-delay-2 { transition-delay: 200ms; } .reveal-delay-3 { transition-delay: 300ms; }
+    .reveal { opacity: 0; transform: translate3d(0, 14px, 0); transition: opacity 420ms ease-out, transform 420ms ease-out; will-change: opacity, transform; }
+    .reveal.visible { opacity: 1; transform: translate3d(0, 0, 0); will-change: auto; }
+    .reveal-delay-1 { transition-delay: 60ms; } .reveal-delay-2 { transition-delay: 100ms; } .reveal-delay-3 { transition-delay: 140ms; }
+    .manifesto-header .reveal, #roadmap.reveal, #roadmap .roadmap-top.reveal { opacity: 1; transform: none; transition: none; will-change: auto; }
     .manifesto-page { padding-top: 112px; }
     .manifesto-header { text-align: center; padding: 80px 0 72px; }
     .manifesto-header h1 { font-family: var(--font-display); font-size: clamp(42px, 6.1vw, 64px); line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; max-width: 860px; margin: 0 auto var(--sp-6); text-wrap: balance; }
@@ -271,6 +273,8 @@
       .manifesto-page { padding-top: 64px; }
       .manifesto-header { padding: 26px 0 54px; text-align: left; }
       .manifesto-header p { font-size: 16px; }
+      .reveal { transform: translate3d(0, 10px, 0); transition-duration: 360ms; }
+      .manifesto-header .reveal, #roadmap.reveal, #roadmap .roadmap-top.reveal { opacity: 1; transform: none; transition: none; will-change: auto; }
       .hero-badge-row { justify-content: flex-start; }
       .header-actions-row, .proof-links { justify-content: flex-start; }
       .proof-strip li { grid-template-columns: 1fr; gap: var(--sp-1); }
@@ -308,7 +312,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+      .reveal, .manifesto-header .reveal, #roadmap.reveal, #roadmap .roadmap-top.reveal { opacity: 1; transform: none; will-change: auto; }
     }
   </style>
 </head>
@@ -895,23 +899,66 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
       const menuClose = document.getElementById('menuClose');
       const contactEmailCopy = document.querySelector('[data-copy-email]');
       const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-      const mobileLinks = Array.from(document.querySelectorAll('.mobile-nav-link'));
       const sections = ['mission','system','roadmap','principles','contact'].map(id => document.getElementById(id)).filter(Boolean);
-      const setScrollState = () => {
-        const scrolled = window.scrollY > 24;
-        header.classList.toggle('scrolled', scrolled);
-        const scrollTop = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
-        const viewportHeight = window.visualViewport?.height || window.innerHeight;
-        const docHeight = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
-        const ratio = docHeight > 0 ? scrollTop / docHeight : 0;
-        progress.style.setProperty('--scroll-progress-scale', String(Math.min(1, Math.max(0, ratio))));
+      const revealEls = Array.from(document.querySelectorAll('.reveal'));
+      const viewport = () => window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight || 0;
+      let unrevealed = revealEls.filter(el => !el.classList.contains('visible'));
+      let revealObserver = null;
+
+      const revealElement = (el) => {
+        el.classList.add('visible');
+        if (revealObserver) revealObserver.unobserve(el);
       };
-      setScrollState();
-      window.addEventListener('scroll', setScrollState, { passive: true });
-      window.addEventListener('resize', setScrollState, { passive: true });
-      window.visualViewport?.addEventListener('resize', setScrollState, { passive: true });
-      window.visualViewport?.addEventListener('scroll', setScrollState, { passive: true });
-      window.addEventListener('orientationchange', setScrollState, { passive: true });
+
+      // Never let first-paint content wait on IntersectionObserver scheduling.
+      document.querySelectorAll('.manifesto-header .reveal, #roadmap.reveal, #roadmap .roadmap-top.reveal').forEach(el => el.classList.add('visible'));
+
+      const revealNearViewport = (extra = Math.round(viewport() * 0.55)) => {
+        if (!unrevealed.length) return;
+        const h = viewport();
+        const remaining = [];
+        for (const el of unrevealed) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < h + extra && rect.bottom > -extra) {
+            revealElement(el);
+          } else {
+            remaining.push(el);
+          }
+        }
+        unrevealed = remaining;
+      };
+
+      let rafPending = false;
+      let lastScrollY = -1;
+      let lastDocHeight = -1;
+      let lastViewportHeight = -1;
+      const updateScrollState = () => {
+        rafPending = false;
+        const scrollTop = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
+        const viewportHeight = viewport();
+        const docHeight = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
+        header.classList.toggle('scrolled', scrollTop > 24);
+        if (scrollTop !== lastScrollY || docHeight !== lastDocHeight || viewportHeight !== lastViewportHeight) {
+          const ratio = docHeight > 0 ? scrollTop / docHeight : 0;
+          progress.style.setProperty('--scroll-progress-scale', String(Math.min(1, Math.max(0, ratio))));
+          lastScrollY = scrollTop;
+          lastDocHeight = docHeight;
+          lastViewportHeight = viewportHeight;
+        }
+        revealNearViewport();
+      };
+      const requestScrollState = () => {
+        if (rafPending) return;
+        rafPending = true;
+        window.requestAnimationFrame(updateScrollState);
+      };
+      updateScrollState();
+      window.addEventListener('scroll', requestScrollState, { passive: true });
+      window.addEventListener('resize', requestScrollState, { passive: true });
+      window.visualViewport?.addEventListener('resize', requestScrollState, { passive: true });
+      window.visualViewport?.addEventListener('scroll', requestScrollState, { passive: true });
+      window.addEventListener('orientationchange', requestScrollState, { passive: true });
+
       const setMenu = (open) => {
         mobileMenu.classList.toggle('open', open);
         mobileMenu.setAttribute('aria-hidden', String(!open));
@@ -922,8 +969,7 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
       };
       menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
       menuClose.addEventListener('click', () => setMenu(false));
-      Array.from(mobileMenu.querySelectorAll('a')).forEach(link => link.addEventListener('click', () => setMenu(false)));
-      mobileLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
+      mobileMenu.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
       contactEmailCopy?.addEventListener('click', async (event) => {
         event.preventDefault();
         const email = contactEmailCopy.dataset.copyEmail || 'contact@ahazaza.rw';
@@ -949,29 +995,39 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
         }
       });
       document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
-      const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }) : null;
-      document.querySelectorAll('.reveal').forEach(el => revealObserver ? revealObserver.observe(el) : el.classList.add('visible'));
+
+      revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          revealElement(entry.target);
+          unrevealed = unrevealed.filter(el => el !== entry.target);
+        }
+      }, { threshold: 0.01, rootMargin: '0px 0px 55% 0px' }) : null;
+      revealEls.forEach(el => revealObserver ? revealObserver.observe(el) : el.classList.add('visible'));
+      revealNearViewport(0);
+
       const activeObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
           const id = entry.target.id;
           navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
-        });
+        }
       }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 }) : null;
       sections.forEach(section => activeObserver && activeObserver.observe(section));
+
       const phaseDetails = Array.from(document.querySelectorAll('.phase-detail'));
+      const desktopQuery = window.matchMedia('(min-width: 721px)');
       const applyRoadmapDefaults = () => {
-        const desktop = window.matchMedia('(min-width: 721px)').matches;
+        const desktop = desktopQuery.matches;
         phaseDetails.forEach(detail => {
           if (detail.dataset.touched === 'true') return;
           detail.open = desktop && detail.dataset.defaultOpen === 'true';
         });
+        requestScrollState();
       };
-      phaseDetails.forEach(detail => detail.addEventListener('toggle', () => { detail.dataset.touched = 'true'; }));
+      phaseDetails.forEach(detail => detail.addEventListener('toggle', () => { detail.dataset.touched = 'true'; requestScrollState(); }));
       applyRoadmapDefaults();
-      window.addEventListener('resize', applyRoadmapDefaults);
+      desktopQuery.addEventListener ? desktopQuery.addEventListener('change', applyRoadmapDefaults) : desktopQuery.addListener(applyRoadmapDefaults);
       document.querySelector('[data-open-roadmap]')?.addEventListener('click', () => phaseDetails.forEach(d => { d.dataset.touched = 'true'; d.open = true; }));
       document.querySelector('[data-close-roadmap]')?.addEventListener('click', () => phaseDetails.forEach(d => { d.dataset.touched = 'true'; d.open = false; }));
     })();
