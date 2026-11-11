@@ -162,69 +162,6 @@
     .manifesto-header .accent { background: var(--grad-hero-glow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .manifesto-header p { font-size: 18px; color: var(--ahz-muted); max-width: 760px; margin: 0 auto; line-height: 1.75; }
     .hero-badge-row { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); margin-bottom: var(--sp-6); }
-    /* Premium Ijwi-inspired audio wave atmosphere for AHAZAZA. */
-    .manifesto-header { position: relative; }
-    .manifesto-header > .container { position: relative; z-index: 2; }
-    .hero-audio-wave-field {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      width: 100vw;
-      min-height: 100vh;
-      min-height: 100dvh;
-      pointer-events: none;
-      overflow: hidden;
-      contain: layout paint style;
-      transform: translate3d(0, 0, 0);
-    }
-    .hero-audio-wave-side {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      z-index: 2;
-      width: min(47vw, 620px);
-      overflow: hidden;
-      opacity: 0.76;
-      transform: translate3d(0, 0, 0);
-      will-change: opacity;
-    }
-    .hero-audio-wave-side--left {
-      left: max(-5vw, -72px);
-      -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 52%, rgba(0,0,0,0.28) 82%, transparent 100%);
-      mask-image: linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 52%, rgba(0,0,0,0.28) 82%, transparent 100%);
-    }
-    .hero-audio-wave-side--right {
-      right: max(-5vw, -72px);
-      -webkit-mask-image: linear-gradient(270deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 52%, rgba(0,0,0,0.28) 82%, transparent 100%);
-      mask-image: linear-gradient(270deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 52%, rgba(0,0,0,0.28) 82%, transparent 100%);
-    }
-    .hero-audio-wave-bars {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-    .hero-wave-bar {
-      position: absolute;
-      top: 50%;
-      width: 3px;
-      min-height: 10px;
-      border-radius: 999px;
-      background: linear-gradient(to top, transparent 0%, rgba(104,216,255,0.78) 20%, rgba(47,128,255,0.94) 48%, rgba(52,211,153,0.70) 75%, transparent 100%);
-      box-shadow: 0 0 16px rgba(104,216,255,0.20), 0 0 34px rgba(47,128,255,0.08);
-      transform: translate3d(0, -50%, 0);
-      transform-origin: center;
-      animation: heroWaveAnim var(--duration) ease-in-out infinite alternate;
-      animation-delay: var(--delay);
-      will-change: height, opacity;
-    }
-    .hero-audio-wave-side--right .hero-wave-bar {
-      background: linear-gradient(to top, transparent 0%, rgba(52,211,153,0.68) 20%, rgba(104,216,255,0.86) 48%, rgba(246,200,95,0.42) 75%, transparent 100%);
-      box-shadow: 0 0 15px rgba(52,211,153,0.16), 0 0 34px rgba(104,216,255,0.08);
-    }
-    @keyframes heroWaveAnim {
-      0% { height: var(--min-h); opacity: 0.24; }
-      100% { height: var(--max-h); opacity: 0.88; }
-    }
     .proof-strip { max-width: 820px; margin: var(--sp-10) auto 0; border-top: 1px solid rgba(168,183,204,0.14); border-bottom: 1px solid rgba(168,183,204,0.14); text-align: left; }
     .proof-strip li { display: grid; grid-template-columns: 160px 1fr; gap: var(--sp-6); padding: var(--sp-4) 0; border-top: 1px solid rgba(168,183,204,0.10); color: var(--ahz-muted); font-size: 15px; line-height: 1.6; }
     .proof-strip li:first-child { border-top: 0; }
@@ -313,9 +250,6 @@
     .footer-copy[href]:hover { color: var(--ahz-sky); }
     .manifesto-content, .timeline-content, .phase-title-wrap, .contact-card, .footer-inner, .footer-brand, .footer-copy { min-width: 0; }
     .footer-brand, .footer-copy { max-width: 100%; overflow-wrap: anywhere; }
-    @media (max-width: 1180px) {
-      .hero-audio-wave-side { width: min(44vw, 480px); opacity: 0.62; }
-    }
     @media (max-width: 980px) {
       .footer-inner { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; justify-content: center; gap: var(--sp-3); text-align: center; }
       .footer-brand, .footer-copy { white-space: normal; }
@@ -356,13 +290,6 @@
     }
 
 
-    @media (max-width: 720px) {
-      .hero-audio-wave-field { inset: 0; opacity: 0.54; }
-      .hero-audio-wave-side { width: 64vw; opacity: 0.48; }
-      .hero-audio-wave-side--left { left: -28vw; }
-      .hero-audio-wave-side--right { right: -36vw; }
-      .hero-wave-bar { width: 2px; box-shadow: 0 0 12px rgba(104,216,255,0.15); }
-    }
 
     @media (max-width: 520px) {
       .container { padding: 0 var(--sp-4); }
@@ -387,16 +314,58 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .reveal, .manifesto-header .reveal, #roadmap.reveal, #roadmap .roadmap-top.reveal { opacity: 1; transform: none; will-change: auto; }
-      .hero-wave-bar { animation: none !important; opacity: 0.26; height: var(--min-h); }
     }
-  </style>
+  
+    /* Added narrative sections use the existing AHAZAZA color, type, rhythm, and content width. */
+    #language, #about { scroll-margin-top: 105px; }
+    .language-values { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:36px 0 44px;border-top:1px solid rgba(168,183,204,.16);border-bottom:1px solid rgba(168,183,204,.16); }
+    .language-values>div { min-width:0;padding:22px 18px 23px;border-right:1px solid rgba(168,183,204,.12); }
+    .language-values>div:first-child{padding-left:0}
+    .language-values>div:last-child{border-right:0;padding-right:0}
+    .language-values span{display:block;font-family:var(--font-mono);font-size:10px;line-height:1.5;letter-spacing:.09em;color:var(--ahz-sky);margin-bottom:10px}
+    .language-values strong{display:block;font-family:var(--font-display);font-weight:500;font-size:15px;line-height:1.45;color:var(--ahz-text)}
+    .language-deep-dive{margin-top:10px;margin-bottom:9px}
+    .language-accordion{margin-top:0}
+    .language-detail summary{padding:7px 0; min-height:70px}
+    .language-detail summary strong{font-size:16px;line-height:1.5}
+    .language-detail-copy{padding-bottom:18px}
+    .language-detail-copy p{font-size:15px;line-height:1.78;margin-bottom:13px;padding:0;max-width:710px}
+    .language-detail-copy p:last-child{margin-bottom:0}
+    .language-actions, .founder-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+    .language-actions .btn, .founder-actions .btn{min-height:46px}
+    .language-actions .btn span, .founder-actions .btn span{margin-left:4px}
+    .founder-label{margin:44px 0 10px}
+    .founder-journey{border-top:1px solid rgba(168,183,204,.16)}
+    .founder-row{display:grid;grid-template-columns:156px minmax(0,1fr);column-gap:26px;padding:23px 0 24px;border-bottom:1px solid rgba(168,183,204,.13);align-items:start}
+    .founder-date{font-family:var(--font-mono);font-size:12px;letter-spacing:.02em;color:var(--ahz-sky);padding-top:5px;white-space:nowrap}
+    .founder-row--current .founder-date{color:var(--ahz-gold)}
+    .founder-event{min-width:0}
+    .founder-event h3{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.018em;line-height:1.4;color:var(--ahz-text);margin:0 0 9px}
+    .founder-event p{font-size:15px;line-height:1.78;margin:0;color:var(--ahz-muted)}
+    .founder-event .badge{margin-top:14px;font-size:10px}
+    .founder-quote{margin-top:38px;padding:30px 32px;border:1px solid rgba(168,183,204,.14);border-left:2px solid var(--ahz-gold);border-radius:0 18px 18px 0;background:linear-gradient(110deg,rgba(246,200,95,.065),rgba(21,38,63,.17))}
+    .founder-quote blockquote{font-family:var(--font-display);font-size:clamp(18px,2.4vw,22px);font-weight:400;line-height:1.7;letter-spacing:-.015em;color:var(--ahz-text)}
+    .founder-quote-by{font-family:var(--font-mono);font-size:11px;line-height:1.7;letter-spacing:.015em;color:var(--ahz-muted);margin-top:22px}
+    @media (max-width:720px){
+      .language-values{grid-template-columns:1fr;margin:28px 0 37px}
+      .language-values>div,.language-values>div:first-child,.language-values>div:last-child{padding:14px 0;border-right:0;border-bottom:1px solid rgba(168,183,204,.12)}
+      .language-values>div:last-child{border-bottom:0}
+      .language-values span{margin-bottom:5px}
+      .founder-row{grid-template-columns:1fr;row-gap:9px;padding:21px 0}
+      .founder-date{padding-top:0}
+      .founder-event h3{font-size:17px}
+      .founder-event p,.language-detail-copy p{font-size:14.5px}
+      .founder-quote{padding:24px 21px;margin-top:28px}
+      .language-actions,.founder-actions{gap:11px}
+    }
+    @media (max-width:520px){
+      .language-actions .btn,.founder-actions .btn{width:100%;justify-content:center;white-space:normal;text-align:center}
+      .founder-quote blockquote{font-size:18px}
+    }
+</style>
 </head>
 <body>
 <div aria-hidden="true" class="page-bg"></div>
-<div aria-hidden="true" class="hero-audio-wave-field">
-<div class="hero-audio-wave-side hero-audio-wave-side--left"><div class="hero-audio-wave-bars" data-hero-waves-side="left"></div></div>
-<div class="hero-audio-wave-side hero-audio-wave-side--right"><div class="hero-audio-wave-bars" data-hero-waves-side="right"></div></div>
-</div>
 <header id="site-header">
 <div aria-hidden="true" class="scroll-progress"></div>
 <div class="header-inner">
@@ -418,6 +387,7 @@
 <a class="nav-link" href="#system">System</a>
 <a class="nav-link" href="#roadmap">Roadmap</a>
 <a class="nav-link" href="#principles">Principles</a>
+<a class="nav-link" href="#about">About</a>
 <a class="nav-link" href="#contact">Contact</a>
 </nav>
 <div class="header-cta"><a class="btn btn-secondary btn-sm header-link-ijwi" href="https://ijwi.rw" rel="noopener noreferrer" target="_blank">ijwi.rw</a><a class="btn btn-secondary btn-sm header-link-wahageze" href="https://wahageze.rw" rel="noopener noreferrer" target="_blank">wahageze.rw</a></div>
@@ -432,6 +402,7 @@
 <a class="mobile-nav-link" href="#system">System</a>
 <a class="mobile-nav-link" href="#roadmap">Roadmap</a>
 <a class="mobile-nav-link" href="#principles">Principles</a>
+<a class="mobile-nav-link" href="#about">About</a>
 <a class="mobile-nav-link" href="#contact">Contact</a>
 <div class="mobile-cta"><a class="btn btn-secondary header-link-ijwi" href="https://ijwi.rw" rel="noopener noreferrer" target="_blank">ijwi.rw</a><a class="btn btn-secondary header-link-wahageze" href="https://wahageze.rw" rel="noopener noreferrer" target="_blank">wahageze.rw</a></div>
 </div>
@@ -487,6 +458,69 @@
 <p>Grocery is frequent, essential, data-rich, price-sensitive, and operationally demanding. It creates a repeatable loop for learning how demand, supply, pricing, fulfillment, support, and trust behave — the smallest practical version of the infrastructure AHAZAZA is building at national scale.</p>
 </details>
 </div>
+</section>
+
+<!-- IJWI MISSION — embedded in the AHAZAZA single-page narrative -->
+<section class="manifesto-section reveal" id="language" aria-labelledby="language-heading">
+  <div class="mission-num">Ijwi — Language &amp; Access</div>
+  <h2 id="language-heading">AI must speak the language of the people it hopes to serve.</h2>
+  <p>Rwanda's AI future cannot rely on intelligence that is difficult to understand, expensive to run, or disconnected from daily life. That is why AHAZAZA is building <span class="mark-gold">Ijwi</span>: a Kinyarwanda-native interface that makes knowledge, services, and real-world operations more accessible through language and voice.</p>
+  <p>This is not a separate ambition from our value-chain mission. Language access makes every layer more useful — from a household placing an order to a supplier receiving instructions, a driver coordinating a delivery, or a citizen asking for help. <span class="mark-green">Access, affordability, trust, and practical usefulness</span> are infrastructure challenges.</p>
+  <div class="pull-quote reveal"><p>Language is not a feature. It is infrastructure.</p></div>
+  <div class="language-values" aria-label="Foundations of the Ijwi mission">
+    <div><span>01 / LANGUAGE</span><strong>Understand people.</strong></div>
+    <div><span>02 / EFFICIENCY</span><strong>Make access affordable.</strong></div>
+    <div><span>03 / TRUST</span><strong>Serve real needs.</strong></div>
+  </div>
+  <div class="section-label language-deep-dive"><div class="section-label-line"></div><span>Six commitments behind Ijwi</span></div>
+  <div class="accordion language-accordion" aria-label="Ijwi mission commitments">
+<details class="principle-detail language-detail">
+  <summary><span>01</span><strong>AI is becoming economic infrastructure.</strong></summary>
+  <div class="language-detail-copy">
+    <p>AI will shape how people learn, work, create, diagnose, farm, trade, organize, and make decisions. It will influence education, healthcare, agriculture, public administration, finance, media, logistics, and nearly every knowledge-intensive service.</p>
+    <p>For Rwanda, the question is not whether AI will matter. The question is whether AI will be usable by the people, institutions, and businesses that must drive a knowledge-based high-income economy by 2050.</p>
+  </div>
+</details>
+<details class="principle-detail language-detail">
+  <summary><span>02</span><strong>The benefits of AI will not be distributed equally by default.</strong></summary>
+  <div class="language-detail-copy">
+    <p>For Rwanda, access to AI is not only about internet coverage. It is about whether AI can understand Kinyarwanda, respond naturally, run affordably, work on realistic devices, and guide people through real local systems.</p>
+    <p>If AI assumes English, typing, complex forms, high literacy, stable broadband, and expensive devices, then it will not fully serve the citizens, farmers, students, workers, entrepreneurs, and public servants who most need practical knowledge support.</p>
+  </div>
+</details>
+<details class="principle-detail language-detail">
+  <summary><span>03</span><strong>Kinyarwanda is not an add-on.</strong></summary>
+  <div class="language-detail-copy">
+    <p>For AI to serve Rwanda meaningfully, it must work in the language people use to learn, ask questions, explain problems, seek help, and make decisions. Language is not a feature to add later. It is the foundation of access, trust, and understanding.</p>
+    <p>A student should be able to ask for a science explanation in Kinyarwanda. A farmer should describe a pest problem without knowing the technical term. A citizen should ask which document is needed for a public service. A small business owner should understand registration, taxes, and bookkeeping without translating institutional language first.</p>
+  </div>
+</details>
+<details class="principle-detail language-detail">
+  <summary><span>04</span><strong>Bigger models are not enough.</strong></summary>
+  <div class="language-detail-copy">
+    <p>If AI is too expensive to run, it cannot scale locally. The current trend toward larger, more powerful models increases capability but also increases cost, latency, and infrastructure requirements. For local startups, schools, clinics, cooperatives, small businesses, researchers, and public institutions, these costs can block adoption.</p>
+    <p>Ijwi focuses on efficient training, model optimization, quantization, and inference efficiency because efficiency is the path to affordability. Affordability is what makes it possible for a voice assistant to serve everyday learning, service navigation, farmer advisory, health education, and SME support at scale.</p>
+  </div>
+</details>
+<details class="principle-detail language-detail">
+  <summary><span>05</span><strong>Speaking is often the most inclusive interface.</strong></summary>
+  <div class="language-detail-copy">
+    <p>Voice interaction can reduce friction for users who are not comfortable with text-first systems, who read slowly, who are working with their hands, who share devices, or who need help through phone calls, WhatsApp voice notes, kiosks, call centers, or low-bandwidth channels.</p>
+    <p>Voice is not the only interface. But for Kinyarwanda, a language of daily life, explanation, respect, and practical problem-solving, speech can carry trust and context in ways that text alone often cannot.</p>
+  </div>
+</details>
+<details class="principle-detail language-detail">
+  <summary><span>06</span><strong>Rwanda&#x27;s development strategy requires local technical capacity.</strong></summary>
+  <div class="language-detail-copy">
+    <p>Rwanda&#x27;s Vision 2050, NST2 priorities, and National AI Policy point toward digital transformation, stronger skills, improved public services, private-sector adoption, responsible innovation, and a knowledge-based high-income economy. Those goals require more than importing foreign AI platforms.</p>
+    <p>They require local datasets, local evaluation, local talent, local safety standards, and AI systems designed for Rwanda&#x27;s language, institutions, devices, sectors, and citizens. Every benchmark built, every consented dataset curated, every optimized Kinyarwanda model trained, and every responsible pilot deployed adds to that national capacity.</p>
+  </div>
+</details>
+  </div>
+  <div class="language-actions">
+    <a class="btn btn-primary" href="https://ijwi.rw/" target="_blank" rel="noopener noreferrer">Try ijwi <span aria-hidden="true">↗</span></a>
+    <a class="btn btn-secondary" href="#contact">Reach out <span aria-hidden="true">↗</span></a>
+  </div>
 </section>
 <section class="manifesto-section reveal" id="system">
 <div class="mission-num">03 — System</div>
@@ -942,6 +976,73 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
 <p>The goal is to make Rwanda’s value chains more intelligent, coordinated, trusted, affordable, and export-ready — first through grocery, then through household essentials, Made-in-Rwanda products, and eventually AI-supported workflows across health, education, productivity, agriculture, and other high-value sectors.</p>
 <div class="pull-quote reveal"><p>AHAZAZA is building toward a Rwanda where value chains are easier to coordinate, easier to trust, easier to finance, easier to scale, and strong enough to carry Made-in-Rwanda products to the world.</p></div>
 </section>
+
+<!-- FOUNDER STORY — native AHAZAZA section, not a separate microsite -->
+<section class="manifesto-section reveal" id="about" aria-labelledby="about-heading">
+  <div class="mission-num">About — The Founder</div>
+  <h2 id="about-heading">A journey toward democratizing intelligence.</h2>
+  <p>Aimé Christian Tuyishime is a Rwandan founder and AI researcher focused on efficient AI systems, low-resource language AI, model optimization, quantization, and inference efficiency. His work centers on a simple belief: powerful technology should become usable by the people, institutions, and businesses that need it most.</p>
+  <p>The same conviction drives AHAZAZA today: build technology that works in Rwanda's language, at realistic cost, with trust and measurable usefulness at the center — then connect that intelligence to the commerce and services people depend on.</p>
+  <div class="section-label founder-label"><div class="section-label-line"></div><span>The journey</span></div>
+  <div class="founder-journey" aria-label="Founder's background and journey">
+<div class="founder-row reveal">
+  <div class="founder-date">2015-2017</div>
+  <div class="founder-event">
+    <h3>Byimana School of Sciences — National Achievement</h3>
+    <p>Studied Mathematics, Chemistry, and Biology. Ranked first nationally in Rwanda&#x27;s 2017 national exams for that combination, demonstrating academic excellence that earned a full scholarship to study in the United States.</p>
+    <span class="badge badge-gold">National First</span>
+  </div>
+</div>
+<div class="founder-row reveal">
+  <div class="founder-date">2018</div>
+  <div class="founder-event">
+    <h3>Full Scholarship to the United States</h3>
+    <p>Earned a full scholarship to attend college in the United States based on national academic performance — a defining milestone that opened access to world-class technical education.</p>
+    
+  </div>
+</div>
+<div class="founder-row reveal">
+  <div class="founder-date">2018–2022</div>
+  <div class="founder-event">
+    <h3>University of Nebraska-Lincoln — Honors and Highest Distinction</h3>
+    <p>Graduated with Honors and Highest Distinction. Honors thesis SEABEM: an AI-powered web application for predicting cover crop biomass. The deeper mission was to democratize yield prediction for non-technical and small-scale farmers, especially in contexts like Sub-Saharan Africa.</p>
+    <span class="badge badge-blue">Honors &amp; Highest Distinction</span>
+  </div>
+</div>
+<div class="founder-row reveal">
+  <div class="founder-date">2022</div>
+  <div class="founder-event">
+    <h3>SEABEM — AI for Agricultural Intelligence</h3>
+    <p>An AI-powered web application for predicting cover crop biomass, designed to democratize yield prediction for non-technical and small-scale farmers. This was the first concrete application of the core thesis: powerful technology should reach the people who need it most.</p>
+    
+  </div>
+</div>
+<div class="founder-row reveal">
+  <div class="founder-date">2023–2025</div>
+  <div class="founder-event">
+    <h3>WorldQuant University — Financial Engineering, Highest Distinction</h3>
+    <p>Master&#x27;s degree in Financial Engineering completed with Highest Distinction. Thesis: &quot;AI-Driven Stock Recommendation: A Quantitative Approach to Democratizing Financial Analysis.&quot; Applied machine learning and quantitative modeling to make financial analysis more accessible.</p>
+    <span class="badge badge-gold">Highest Distinction</span>
+  </div>
+</div>
+<div class="founder-row founder-row--current reveal">
+  <div class="founder-date">2025-Now</div>
+  <div class="founder-event">
+    <h3>AHAZAZA TECHNOLOGIES LTD — Founded</h3>
+    <p>Founded AHAZAZA TECHNOLOGIES LTD to develop a Kinyarwanda-native AI layer addressing Rwanda&#x27;s language, cost, trust, practical usefulness, and commerce-infrastructure access bottlenecks. The focus is on making intelligence and everyday services accessible through voice and locally relevant infrastructure.</p>
+    <span class="badge badge-muted">Rwandan technology company</span>
+  </div>
+</div>
+  </div>
+  <div class="founder-quote reveal">
+    <blockquote>&quot;My past projects kept returning to the same idea: powerful technology should not remain accessible only to technical experts or wealthy institutions. Ijwi is the next step in that journey - bringing knowledge, services, and productivity tools closer to Rwandans through language, voice, and efficiency.&quot;</blockquote>
+    <div class="founder-quote-by">— Aimé Christian Tuyishime, Founder &amp; AI Researcher, AHAZAZA TECHNOLOGIES LTD</div>
+  </div>
+  <div class="founder-actions">
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/aimechristiant/" target="_blank" rel="noopener noreferrer">View research direction <span aria-hidden="true">↗</span></a>
+    <a class="btn btn-secondary" href="https://ijwi.rw/" target="_blank" rel="noopener noreferrer">Try ijwi <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
 <section class="manifesto-section contact-section reveal" id="contact">
 <div class="mission-num">09 — Contact</div>
 <h2>Build Rwanda’s AI-native value-chain infrastructure with us.</h2>
@@ -972,9 +1073,8 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
       const contactEmailCopy = document.querySelector('[data-copy-email]');
       const homeLogo = document.querySelector('.logo-wrap');
       const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-      const sections = ['mission','system','roadmap','principles','contact'].map(id => document.getElementById(id)).filter(Boolean);
+      const sections = ['mission','language','system','roadmap','principles','about','contact'].map(id => document.getElementById(id)).filter(Boolean);
       const revealEls = Array.from(document.querySelectorAll('.reveal'));
-      const heroWaveMarkupCache = new Map();
       const viewport = () => window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight || 0;
       let unrevealed = revealEls.filter(el => !el.classList.contains('visible'));
       let revealObserver = null;
@@ -985,38 +1085,6 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
       };
 
 
-      const buildHeroWaveMarkup = (side = 'left') => {
-        if (heroWaveMarkupCache.has(side)) return heroWaveMarkupCache.get(side);
-        const count = 46;
-        const phase = side === 'right' ? 1.35 : 0.15;
-        const bars = [];
-        for (let i = 0; i < count; i++) {
-          const t = count === 1 ? 0 : i / (count - 1);
-          const x = 3 + t * 94;
-          const centerPulse = Math.sin(Math.PI * t);
-          const organicPulse = (Math.sin((i * 1.73) + phase) + 1) / 2;
-          const microPulse = (Math.sin((i * 0.61) + phase * 2) + 1) / 2;
-          const minH = Math.round(16 + organicPulse * 22 + microPulse * 8);
-          const maxH = Math.round(64 + centerPulse * 190 + organicPulse * 44 + microPulse * 26);
-          const delay = `-${(i * 0.055 + phase).toFixed(2)}s`;
-          const duration = `${(1.55 + organicPulse * 1.15 + (i % 5) * 0.08).toFixed(2)}s`;
-          bars.push(`<span class="hero-wave-bar" style="left:${x.toFixed(2)}%;--min-h:${minH}px;--max-h:${maxH}px;--delay:${delay};--duration:${duration}"></span>`);
-        }
-        const markup = bars.join('');
-        heroWaveMarkupCache.set(side, markup);
-        return markup;
-      };
-
-      const initHeroSideWaves = () => {
-        document.querySelectorAll('[data-hero-waves-side]').forEach((wavesEl) => {
-          if (wavesEl.dataset.ready === 'true') return;
-          const side = wavesEl.dataset.heroWavesSide || 'left';
-          wavesEl.innerHTML = buildHeroWaveMarkup(side);
-          wavesEl.dataset.ready = 'true';
-        });
-      };
-
-      initHeroSideWaves();
 
       // Never let first-paint content wait on IntersectionObserver scheduling.
       document.querySelectorAll('.manifesto-header .reveal, #roadmap.reveal, #roadmap .roadmap-top.reveal').forEach(el => el.classList.add('visible'));
@@ -1126,7 +1194,7 @@ Trust • Data • Identity • Compliance • Quality • Standards • Risk Co
       const activeObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
-          const id = entry.target.id;
+          const id = entry.target.id === 'language' ? 'mission' : entry.target.id;
           navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
         }
       }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 }) : null;
